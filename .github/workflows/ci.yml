@@ -23,11 +23,12 @@ jobs:
           pip install pytest
           pip install flake8
 
-      - name: run the tests
-        run: pytest -q
-      
+          
       - name: Lint
         run: flake8 src/ tests/
-      
-      - name: Bandit
-        run: bandit src/ directory
+          
+      - name: Security Scan
+        run: bandit -r src/ directory
+          
+      - name: run the tests
+        run: pytest -q
