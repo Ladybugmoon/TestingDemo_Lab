@@ -27,6 +27,9 @@ jobs:
 
       - name: Lint
         run: flake8 src/ tests/
+      
+      - name: Dependency scan
+        run:  safety check
           
       - name: Security Scan
         run: pip install bandit && bandit -r src/
